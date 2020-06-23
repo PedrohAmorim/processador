@@ -1,0 +1,6 @@
+C:\Users\pedro\source\repos\Processador\Processador\bin\Debug\Processador.exe.config
+C:\Users\pedro\source\repos\Processador\Processador\bin\Debug\Processador.exe
+C:\Users\pedro\source\repos\Processador\Processador\bin\Debug\Processador.pdb
+C:\Users\pedro\source\repos\Processador\Processador\obj\Debug\Processador.csproj.CoreCompileInputs.cache
+C:\Users\pedro\source\repos\Processador\Processador\obj\Debug\Processador.exe
+C:\Users\pedro\source\repos\Processador\Processador\obj\Debug\Processador.pdb
