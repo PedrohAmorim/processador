@@ -22,13 +22,13 @@ namespace Processador
         static void Main(string[] args)
         {
             loadingModule();
-            timer = new System.Timers.Timer(60000);
+            timer = new System.Timers.Timer(600000);
             timer.Elapsed += Timer_Elapsed;
             timer.Enabled = true;
 
 
             // replace the IP with your system IP Address...
-            Servidor myserver = new Servidor(IPAddress.Any, int.Parse(ConfigurationManager.AppSettings.Get("PORT")));
+            Server myserver = new Server(IPAddress.Any, int.Parse(ConfigurationManager.AppSettings.Get("PORT")));
 
         }
 

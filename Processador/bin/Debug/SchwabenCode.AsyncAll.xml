@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchwabenCode.AsyncAll</name>
+    </assembly>
+    <members>
+        <member name="T:SchwabenCode.AsyncAll.AsyncAll">
+            <summary>
+            Extensions to provide several methods for all .NET Framework verions for async/await Pattern
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.SetTaskFactory(System.Threading.Tasks.TaskFactory)">
+            <summary>
+            Sets the factory, the tasks are created with.
+            </summary>
+            <param name="taskFactory">TaskFactory to set.</param>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.GetTaskFactory">
+            <summary>
+            Gets the factory, the tasks are created with.
+            </summary>
+            <returns>The factory, the tasks are created with.</returns>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.ExecuteAsyncResult``1(System.Action,``0)">
+            <summary>
+            Executes the action in a wrapped task to use async operation
+            </summary>
+            <typeparam name="T">Result Type</typeparam>
+            <param name="action">Action to execute in wrapped task</param>
+            <param name="resultValue">Returns this value if finished</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/></returns>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.GetAsyncResult``1(System.Func{``0})">
+            <summary>
+            Executes the action in a wrapped task to use async operation and gets the result
+            </summary>
+            <typeparam name="T">Result Type</typeparam>
+            <param name="action">Action to execute in wrapped task</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> with result value</returns>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.ExecuteAsync(System.Action)">
+            <summary>
+            Executes the action in a wrapped task to use async operation
+            </summary>
+            <param name="action">Action to execute in wrapped task</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/></returns>
+        </member>
+        <member name="T:SchwabenCode.AsyncAll.AsyncAll.AsyncAllInstance">
+            <summary>
+            Instance Cache
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.AsyncAll.AsyncAll.AsyncAllInstance.#ctor">
+            <summary>
+            Creates new instance and sets default task factory
+            </summary>
+        </member>
+        <member name="F:SchwabenCode.AsyncAll.AsyncAll.AsyncAllInstance.Instance">
+            <summary>
+            Holds data for AsyncAll
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.AsyncAll.AsyncAll.AsyncAllInstance.Factory">
+            <summary>
+            Factory for AsyncAll
+            </summary>
+        </member>
+    </members>
+</doc>
