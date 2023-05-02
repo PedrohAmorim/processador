@@ -9,7 +9,11 @@ using System.Threading;
 
 namespace Processador
 {
-
+    public enum TypeMessage
+    {
+        EVENT = 0,
+        TRACK = 1
+    }
     class Server
     {
         TcpListener server = null;
@@ -37,13 +41,15 @@ namespace Processador
                 server.Stop();
             }
         }
+
+
         public void ProcessMessage(Object obj)
         {
             TcpClient client = (TcpClient)obj;
             var stream = client.GetStream();
             Byte[] bytes = new Byte[256];
             int i = 0;
-            
+
             try
             {
                 //do
@@ -56,9 +62,23 @@ namespace Processador
 
                     string[] hex = BitConverter.ToString(bytes).Split('-');
                     //string data = Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine("Mensagem: {0}", Misc.arrayToString(hex, 0, hex.Length - 1, false));
 
-                    Packet extractPacket = new Packet(hex);
+                    var header = new PacketHeader(hex);
+
+                    Console.WriteLine("Mensagem: {0}", Misc.arrayToString(hex, 0, header.MessageSize, false));
+
+
+                    if (header.MessageType == (int)TypeMessage.EVENT)
+                    {
+
+                    }
+                    else if (header.MessageType == (int)TypeMessage.TRACK)
+                    {
+                        Track newTrack = new Track(hex, header);
+                        Console.Write(newTrack.ToString());
+                    }
+
+
                 }
 
             }

@@ -181,7 +181,8 @@
     <Compile Include="Classes\PacketHeader.cs" />
     <Compile Include="Classes\SqlDataBase.cs" />
     <Compile Include="Classes\Module.cs" />
-    <Compile Include="Classes\Packet.cs" />
+    <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\Track.cs" />
     <Compile Include="Classes\Server.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

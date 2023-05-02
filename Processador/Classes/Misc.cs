@@ -8,6 +8,24 @@ namespace Processador.Classes
 {
     public static class Misc
     {
+
+        public static int decriptHexaDecimal(string hexadecimal)
+        {
+            try
+            {
+                var OriginalMessage = hexadecimal.Replace("0x", "").Split(' ').Reverse().ToArray();
+
+                var concatString = String.Join("", OriginalMessage);
+
+                return Convert.ToInt32(concatString, 16);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+
         public static string arrayToString(string[] message, int start, int iterations, bool invert)
         {
             string stringConcat = "";
