@@ -56,14 +56,14 @@
     <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=2.19.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.19.1\lib\net472\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.14.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.2.14.1\lib\net472\MongoDB.Driver.dll</HintPath>
+    <Reference Include="MongoDB.Driver, Version=2.19.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.19.1\lib\net472\MongoDB.Driver.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.19.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.19.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    <Reference Include="MongoDB.Driver.Core, Version=2.19.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.19.1\lib\net472\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Libmongocrypt, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Libmongocrypt.1.7.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
@@ -174,16 +174,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Interface\IMongoRepository.cs" />
-    <Compile Include="Classes\Misc.cs" />
-    <Compile Include="Classes\MongoRepository.cs" />
-    <Compile Include="Classes\PacketSave.cs" />
-    <Compile Include="Classes\PacketHeader.cs" />
-    <Compile Include="Classes\SqlDataBase.cs" />
-    <Compile Include="Classes\Module.cs" />
-    <Compile Include="Classes\Event.cs" />
-    <Compile Include="Classes\Track.cs" />
-    <Compile Include="Classes\Server.cs" />
+    <Compile Include="Repository\Driver.cs" />
+    <Compile Include="Repository\Interface\IMongoRepository.cs" />
+    <Compile Include="Repository\Misc.cs" />
+    <Compile Include="Repository\Models\Packet.cs" />
+    <Compile Include="Repository\MongoRepository.cs" />
+    <Compile Include="Repository\PacketSave.cs" />
+    <Compile Include="Repository\PacketHeader.cs" />
+    <Compile Include="Repository\SqlDataBase.cs" />
+    <Compile Include="Repository\Module.cs" />
+    <Compile Include="Repository\Event.cs" />
+    <Compile Include="Repository\Track.cs" />
+    <Compile Include="Repository\Server.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,1742 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchwabenCode.MongoDBRepository</name>
+    </assembly>
+    <members>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.CreateIndex(MongoDB.Driver.IMongoIndexKeys,MongoDB.Driver.IMongoIndexOptions,System.Boolean)">
+            <summary>
+            Ensures that the desired index exists and creates it if it does not
+            </summary>
+            <param name="indexKeys">Keys</param>
+            <param name="options">Index Options</param>
+            <param name="reCreate">Re-creates index if name already exists.</param>
+            <returns>null if creation failed or SafeMode is off.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DropIndex(MongoDB.Driver.IMongoIndexKeys)">
+            <summary>
+            Drops an index
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DropIndexByName(System.String)">
+            <summary>
+            Drops an index
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.ContainsID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Returns true if passed is is known
+            </summary>
+            <param name="id">the ID to check</param>
+            <returns>true if id exists in collection</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Add(`0)">
+            <summary>
+                Adds the passed entity to current collection
+            </summary>
+            <param name="entity">Entity to add</param>
+            <returns>
+                <see cref="T:MongoDB.Driver.WriteConcernResult"/>
+            </returns>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">if entity is invalid</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.AddAsync(`0)">
+            <summary>
+                Adds the passed entity to current collection
+            </summary>
+            <param name="entity">Entity to add</param>
+            <returns>
+                <see cref="T:MongoDB.Driver.WriteConcernResult"/>
+            </returns>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">if entity is invalid</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.AddOrUpdate(`0)">
+            <summary>
+                Updates an existing entity or adds if new
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.AddOrUpdateAsync(`0)">
+            <summary>
+                Updates an existing entity or adds if new
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Count">
+            <summary>
+                Return the count of elements in the current collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.CountAsync">
+            <summary>
+                Return the count of elements in the current collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Count(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Returns the count of elements of the matching query
+            </summary>
+            <returns>count of elements matching the query</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.CountAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Returns the count of elements of the matching query
+            </summary>
+            <returns>count of elements matching the query</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Delete(`0)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DeleteAsync(`0)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Delete(System.String)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DeleteAsync(System.String)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Delete(MongoDB.Bson.ObjectId)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DeleteAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Delete(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Deletes the specified entities.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DeleteAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Deletes the specified entities.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Deletes the specified entities by where expression.
+            </summary>
+            <param name="where">LINQ query</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Deletes the specified entities by where expression.
+            </summary>
+            <param name="where">LINQ query</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Exists(MongoDB.Bson.ObjectId)">
+            <summary>
+                Checks whether the ID exists
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.ExistsAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Checks whether the ID exists
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Exists(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Checks whether the query is matching an existing element
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.ExistsAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Checks whether the query is matching an existing element
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.FirstOrDefault``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Returns first element by passed sort mode
+            </summary>
+            <typeparam name="T">Entity Type</typeparam>
+            <param name="sortBy">Sort Mode</param>
+            <returns>First element or null if collection is empty</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.FirstOrDefaultAsync``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Returns first element by passed sort mode
+            </summary>
+            <typeparam name="T">Entity Type</typeparam>
+            <param name="sortBy">Sort Mode</param>
+            <returns>First element or null if collection is empty</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Get``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAsync``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Get``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets en element by the specified filter.
+            </summary>
+            <param name="where">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets en element by the specified filter.
+            </summary>
+            <param name="where">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAll">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAll``1">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllAsync">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllAsync``1">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAll``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllAsync``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAll``1(System.Int32)">
+            <summary>
+                Gets all elements limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllAsync``1(System.Int32)">
+            <summary>
+                Gets all elements limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAll``1(MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets all elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllAsync``1(MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets all elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllByID``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllByIDAsync``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllDocuments">
+            <summary>
+                Returns all documents of current collection
+            </summary>
+            <returns>All documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetAllDocumentsAsync">
+            <summary>
+                Returns all documents of current collection
+            </summary>
+            <returns>All documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByID``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByIDAsync``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByID(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByIDAsync(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByID``1(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetByIDAsync``1(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetDocumentByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the document by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetDocumentByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the document by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetDocumentsByID(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the documents by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetDocumentsByIDAsync(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the documents by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all matching elements
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all matching elements
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets the matched and sorted elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets the matched and sorted elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,System.Int32)">
+            <summary>
+                Gets the matched and limited elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,System.Int32)">
+            <summary>
+                Gets the matched and limited elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets the matching elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets the matching elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetMany(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets a collection of elements by given exception (take care, linq is slow and not fully supported by MongoDB C#
+                Driver!)
+            </summary>
+            <param name="where">The expression.</param>
+            <returns>enumerable of entities</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.GetManyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets a collection of elements by given exception (take care, linq is slow and not fully supported by MongoDB C#
+                Driver!)
+            </summary>
+            <param name="where">The expression.</param>
+            <returns>enumerable of entities</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Update(`0)">
+            <summary>
+                Updates given entity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.UpdateAsync(`0)">
+            <summary>
+                Updates given entity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Update(MongoDB.Bson.BsonDocument)">
+            <summary>
+                Updates given document of collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.UpdateAsync(MongoDB.Bson.BsonDocument)">
+            <summary>
+                Updates given document of collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoRepository`2.Dispose">
+            <summary>
+                Empty disposing for easier code styling
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoRepository`2.IDFieldName">
+            <summary>
+            Override this with your ID field name
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoRepository`2.CollectionName">
+            <summary>
+                Current table name
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoRepository`2.UnitOfWork">
+            <summary>
+                Data context
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoRepository`2.Entities">
+            <summary>
+                Gets the current entity set.
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoRepository`2.Documents">
+            <summary>
+                Gets the current document set.
+            </summary>
+        </member>
+        <member name="E:SchwabenCode.MongoDBRepository.IMongoRepository`2.OnEntityAdded">
+            <summary>
+                Gets fired if an typed entity has been added. Does not work for documents!
+            </summary>
+        </member>
+        <member name="E:SchwabenCode.MongoDBRepository.IMongoRepository`2.OnEntityDeleted">
+            <summary>
+                Gets fired if an typed entity has been deleted. Does not work for documents!
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoRepository`2">
+            <summary>
+                MongoDB Base Repository
+            </summary>
+            <typeparam name="TEntity">Main Entity Type</typeparam>
+            <typeparam name="IEntity">Interface Scope</typeparam>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <remarks>Uses the pluralized name of the given entity as collection name</remarks>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.String)">
+            <summary>
+            Creates a default instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionName">Name of table/collection</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.Boolean)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionNamePluralize">Appends an 's' after the entity's name to use this as collection name</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.CreateIndex(MongoDB.Driver.IMongoIndexKeys,MongoDB.Driver.IMongoIndexOptions,System.Boolean)">
+            <summary>
+            Ensures that the desired index exists and creates it if it does not
+            </summary>
+            <param name="indexKeys">Keys</param>
+            <param name="options">Index Options</param>
+            <param name="reCreate">Re-creates index if name already exists.</param>
+            <returns>null if creation failed or SafeMode is off.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DropIndex(MongoDB.Driver.IMongoIndexKeys)">
+            <summary>
+            Drops an index
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DropIndexByName(System.String)">
+            <summary>
+            Drops an index
+            </summary>
+        </member>
+        <member name="F:SchwabenCode.MongoDBRepository.MongoRepository`2._unitOfWork">
+            <summary>
+            Context
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.ContainsID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Returns true if passed is is known
+            </summary>
+            <param name="id">the ID to check</param>
+            <returns>true if id exists in collection</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Add(`0)">
+            <summary>
+                Adds the passed entity to current collection
+            </summary>
+            <param name="entity">Entity to add</param>
+            <returns>
+                <see cref="T:MongoDB.Driver.WriteConcernResult"/>
+            </returns>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">if entity is invalid</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.AddAsync(`0)">
+            <summary>
+                Adds the passed entity to current collection
+            </summary>
+            <param name="entity">Entity to add</param>
+            <returns>
+                <see cref="T:MongoDB.Driver.WriteConcernResult"/>
+            </returns>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">if entity is invalid</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.AddOrUpdate(`0)">
+            <summary>
+                Updates an existing entity or adds if new
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.AddOrUpdateAsync(`0)">
+            <summary>
+                Updates an existing entity or adds if new
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Count">
+            <summary>
+                Return the count of elements in the current collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.CountAsync">
+            <summary>
+                Return the count of elements in the current collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Count(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Returns the count of elements of the matching query
+            </summary>
+            <returns>count of elements matching the query</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.CountAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Returns the count of elements of the matching query
+            </summary>
+            <returns>count of elements matching the query</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Delete(`0)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DeleteAsync(`0)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Delete(System.String)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DeleteAsync(System.String)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Delete(MongoDB.Bson.ObjectId)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DeleteAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Deletes the specified entity.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Delete(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Deletes the specified entities.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DeleteAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Deletes the specified entities.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Deletes the specified entities by where expression.
+            </summary>
+            <param name="where">LINQ query</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Deletes the specified entities by where expression.
+            </summary>
+            <param name="where">LINQ query</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Exists(MongoDB.Bson.ObjectId)">
+            <summary>
+                Checks whether the ID exists
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.ExistsAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Checks whether the ID exists
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Exists(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Checks whether the query is matching an existing element
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.ExistsAsync(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Checks whether the query is matching an existing element
+            </summary>
+            <returns>Calls Count and checks > 0</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.FirstOrDefault``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Returns first element by passed sort mode
+            </summary>
+            <typeparam name="T">Entity Type</typeparam>
+            <param name="sortBy">Sort Mode</param>
+            <returns>First element or null if collection is empty</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.FirstOrDefaultAsync``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Returns first element by passed sort mode
+            </summary>
+            <typeparam name="T">Entity Type</typeparam>
+            <param name="sortBy">Sort Mode</param>
+            <returns>First element or null if collection is empty</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Get``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAsync``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Get``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets en element by the specified filter.
+            </summary>
+            <param name="where">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets en element by the specified filter.
+            </summary>
+            <param name="where">The filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAll">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAll``1">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllAsync">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllAsync``1">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAll``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllAsync``1(MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets all elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAll``1(System.Int32)">
+            <summary>
+                Gets all elements limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllAsync``1(System.Int32)">
+            <summary>
+                Gets all elements limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAll``1(MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets all elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllAsync``1(MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets all elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllByID``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllByIDAsync``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the Entity by <see cref="T:MongoDB.Bson.ObjectId"/>
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllDocuments">
+            <summary>
+                Returns all documents of current collection
+            </summary>
+            <returns>All documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetAllDocumentsAsync">
+            <summary>
+                Returns all documents of current collection
+            </summary>
+            <returns>All documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByID``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByIDAsync``1(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the entity by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByID(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByIDAsync(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByID``1(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetByIDAsync``1(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the entities by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetDocumentByID(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the document by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetDocumentByIDAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+                Gets the document by passed ID
+            </summary>
+            <param name="id">Entity's ID</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetDocumentsByID(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the documents by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetDocumentsByIDAsync(System.Collections.Generic.IEnumerable{MongoDB.Bson.ObjectId})">
+            <summary>
+                Gets the documents by passed IDs
+            </summary>
+            <param name="ids">Entity's IDs</param>
+            <returns>
+                Entity or
+                <value>null</value>
+            </returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all matching elements
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Gets all matching elements
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets the matched and sorted elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy)">
+            <summary>
+                Gets the matched and sorted elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,System.Int32)">
+            <summary>
+                Gets the matched and limited elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,System.Int32)">
+            <summary>
+                Gets the matched and limited elements.
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetMany``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets the matching elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetManyAsync``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,System.Int32)">
+            <summary>
+                Gets the matching elements sorted and limited
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetMany(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets a collection of elements by given exception (take care, linq is slow and not fully supported by MongoDB C#
+                Driver!)
+            </summary>
+            <param name="where">The expression.</param>
+            <returns>enumerable of entities</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.GetManyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets a collection of elements by given exception (take care, linq is slow and not fully supported by MongoDB C#
+                Driver!)
+            </summary>
+            <param name="where">The expression.</param>
+            <returns>enumerable of entities</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Update(`0)">
+            <summary>
+                Updates given entity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.UpdateAsync(`0)">
+            <summary>
+                Updates given entity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Update(MongoDB.Bson.BsonDocument)">
+            <summary>
+                Updates given document of collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.UpdateAsync(MongoDB.Bson.BsonDocument)">
+            <summary>
+                Updates given document of collection
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.AllDocumentsMapped``1">
+            <summary>
+                Calls
+                <see>
+                    <cref>CurrentDocumentCollection.FindAllAs</cref>
+                </see>
+                and only loads the fields of given type.
+            </summary>
+            <typeparam name="T">Given type to map</typeparam>
+            <remarks>If T is assignable from <see cref="T:SchwabenCode.MongoDBRepository.IMongoDiscoverable"/> only the implemented fields are loaded.</remarks>
+            <returns>Cursor of typed documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.ManyDocumentsMapped``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Calls
+                <see>
+                    <cref>CurrentDocumentCollection.FindAs</cref>
+                </see>
+                and only loads the fields of given type.
+            </summary>
+            <typeparam name="T">Given type to map</typeparam>
+            <param name="query">Many query</param>
+            <returns>Cursor of typed documents</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.CreateEQQueryIDField(MongoDB.Bson.ObjectId)">
+            <summary>
+            Creates a query for <see cref="M:MongoDB.Driver.Builders.Query.EQ(System.String,MongoDB.Bson.BsonValue)"/> on <see cref="!:IDField"/>
+            </summary>
+            <param name="id">the ID</param>
+            <returns><see cref="T:MongoDB.Driver.IMongoQuery"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.Dispose">
+            <summary>
+                Empty disposing for easier code styling
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.FireEntityAdded(`0)">
+            <summary>
+                Fires <see cref="E:SchwabenCode.MongoDBRepository.MongoRepository`2.OnEntityAdded"/>
+            </summary>
+            <param name="entity">Entity that has been added</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`2.FireEntityDeleted(`0)">
+            <summary>
+                Fires <see cref="E:SchwabenCode.MongoDBRepository.MongoRepository`2.OnEntityDeleted"/>
+            </summary>
+            <param name="entity">Entity that has been deleted</param>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoRepository`2.IDFieldName">
+            <summary>
+            Override this with your ID field name
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoRepository`2.CollectionName">
+            <summary>
+                Current collection name
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoRepository`2.UnitOfWork">
+            <summary>
+                Data context
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoRepository`2.Entities">
+            <summary>
+                Gets the current entity set.
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoRepository`2.Documents">
+            <summary>
+                Gets the current document set.
+            </summary>
+        </member>
+        <member name="E:SchwabenCode.MongoDBRepository.MongoRepository`2.OnEntityAdded">
+            <summary>
+                Gets fired if an typed entity has been added. Does not work for documents!
+            </summary>
+        </member>
+        <member name="E:SchwabenCode.MongoDBRepository.MongoRepository`2.OnEntityDeleted">
+            <summary>
+                Gets fired if an typed entity has been deleted. Does not work for documents!
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <remarks>Uses the pluralized name of the given entity as collection name</remarks>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.String)">
+            <summary>
+            Creates a default instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionName">Name of table/collection</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.Boolean)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionNamePluralize">Appends an 's' after the entity's name to use this as collection name</param>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2">
+            <summary>
+                MongoDB Base Repository with entity validation
+            </summary>
+            <typeparam name="TEntity">Main Entity Type</typeparam>
+            <typeparam name="IEntity">Interface Scope</typeparam>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.Boolean)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionNamePluralize">Appends an 's' after the entity's name to use this as collection name</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.String)">
+            <summary>
+            Creates a default instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="tableName">Name of table/collection</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.Add(`0)">
+            <summary>
+                Adds the passed entity to current collection
+            </summary>
+            <param name="entity">Entity to add</param>
+            <returns>
+                <see cref="T:MongoDB.Driver.WriteConcernResult"/>
+            </returns>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">if entity is invalid</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.AddOrUpdate(`0)">
+            <summary>
+                Updates an existing entity or adds if new
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.Update(`0)">
+            <summary>
+                Updates given entity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoValidatableRepository`2.ThrowOnInvalidEntity(`0)">
+            <summary>
+                Validates an entity.
+            </summary>
+            <exception cref="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">is thrown if invalid</exception>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoEntityValidationResult">
+            <summary>
+            Validation result container
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidationResult.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Creates container
+            </summary>
+            <param name="results">result collection</param>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoEntityValidationResult.IsValid">
+            <summary>
+            Indicates whether the validation was successfully
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoEntityValidationResult.Results">
+            <summary>
+            Error Collection. 
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.IMongoEntity">
+            <summary>
+            MongoDB Entity. Use this for entites.
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.IMongoEntityValidatable">
+            <summary>
+            Frame Interface
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.IsValid(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult}@)">
+            <summary>
+            Validations the entity
+            </summary>
+            <param name="validationResults">Errors</param>
+            <returns>true if entity is valid</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.IsValid">
+            <summary>
+            Entity validation
+            </summary>
+            <returns><see cref="T:SchwabenCode.MongoDBRepository.MongoEntityValidationResult"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.IsValidAsync">
+            <summary>
+            Entity validation
+            </summary>
+            <returns><see cref="T:SchwabenCode.MongoDBRepository.MongoEntityValidationResult"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.Validate">
+            <summary>
+            Please implement your validate logic
+            </summary>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.ValidateAsync">
+            <summary>
+            Async validation
+            </summary>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Implementation of <see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject"/>
+            </summary>
+            <param name="validationContext">Context</param>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.IMongoEntityValidatable.ValidateAsync(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Implementation of <see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject"/>
+            </summary>
+            <param name="validationContext">Context</param>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.IMongoDiscoverable">
+            <summary>
+            Implement this interface to enable full discoverage 
+             </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.IMongoUnitOfWork">
+            <summary>
+            Unit of Work pattern for MongoDB DBMS
+            </summary>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.IMongoUnitOfWork.Context">
+            <summary>
+            Context
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoInvalidEntityException">
+            <summary>
+            Gets fired when an entity validation fails
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoInvalidEntityException.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Gets fired when an entity validation fails
+            </summary>
+            <param name="errors">Collection of errors</param>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.MongoInvalidEntityException.Errors">
+            <summary>
+            Validation errors
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoExtensions">
+            <summary>
+            Serveral MongoDB Extensions
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.All(MongoDB.Driver.MongoCollection{MongoDB.Bson.BsonDocument})">
+            <summary>
+            Returns all documents
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.All(System.Collections.Generic.IEnumerable{MongoDB.Bson.BsonDocument})">
+            <summary>
+            Returns all documents
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.AsObjectId(System.String)">
+            <summary>
+            Converts a String to an ObjectId
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.AsObjectId(System.Nullable{MongoDB.Bson.ObjectId})">
+            <summary>
+            Converts an nullable ObjectId to an ObjectId
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.HasValue(MongoDB.Bson.BsonValue)">
+            <summary>
+            Checks whether the given value is not null
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.SetValue``1(MongoDB.Bson.BsonDocument,System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Sets the value by given expression
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.GetValue``1(MongoDB.Bson.BsonDocument,System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Gets the value by given expression
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.GetBsonValueByName(MongoDB.Bson.BsonDocument,System.String)">
+            <summary>
+            returns the value by field name
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.GetStringValue(MongoDB.Bson.BsonDocument,System.String,System.String)">
+            <summary>
+            Returns the string by field name
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.AsLocalDateTime(MongoDB.Bson.BsonValue)">
+            <summary>
+            Returns the given value as local datetime
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.AsNullableLocalDateTime(MongoDB.Bson.BsonValue)">
+            <summary>
+            Returns the given value as local datetime or null if value is no datetime
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoExtensions.AsNullableObjectId(MongoDB.Bson.BsonValue)">
+            <summary>
+            Returns the given value as ObjectId
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoQuery">
+            <summary>
+            Several helpers to build MongoDB queries
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.CombineFields(System.String,System.String)">
+            <summary>
+            Combines field names
+            </summary>
+            <returns>fieldA.fieldB</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.IsValidObjectId(System.String)">
+            <summary>
+            Checks whether the string is a valid ObjectId
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.QueryExactPattern(System.String)">
+            <summary>
+            Query for string search wit ignoring case
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.Equals(System.String,System.Boolean)">
+            <summary>
+            Equal query - case-insenstivity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.Contains(System.String,System.Boolean)">
+            <summary>
+            Equal query - case-insenstivity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.StartsWith(System.String,System.Boolean)">
+            <summary>
+            StartsWith query - case-senstivity
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoQuery.EndsWith(System.String,System.Boolean)">
+            <summary>
+            EndsWith query - case-senstivity
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoDiscoverer">
+            <summary>
+            Serveral MongoDB Extensions
+            </summary>
+        </member>
+        <member name="F:SchwabenCode.MongoDBRepository.MongoDiscoverer.MaxMongoDocumentDepth">
+            <summary>
+            MongoDB supports not more than 100 levels of nested documents.
+            </summary>
+            <remarks>http://docs.mongodb.org/manual/reference/limits/</remarks>
+        </member>
+        <member name="F:SchwabenCode.MongoDBRepository.MongoDiscoverer.SimpleTypes">
+            <summary>
+            Simples Types. This types are important to determine the depth of bson objects
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetPropertyValue``1(System.Object,System.String)">
+            <summary>
+            Returns the value of given property name
+            </summary>
+            <typeparam name="T">Return type</typeparam>
+            <param name="source">Affected Object</param>
+            <param name="propertyName">Name of Property</param>
+            <returns>Returns the value of given property</returns>
+            <exception cref="T:System.InvalidCastException">if type is incompatible</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            Returns the value of given property name
+            </summary>
+            <param name="source">Affected Object</param>
+            <param name="propertyName">Name of Property</param>
+            <returns>Returns the value of given property</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetMemberPropertyNames``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Returns all property names of given member and expression
+            </summary>
+        </member>
+        <member name="F:SchwabenCode.MongoDBRepository.MongoDiscoverer.FieldCache">
+            <summary>
+                Field cache
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.TryGetFieldCacheKey(System.Type,System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Tries to get cached property names of given type
+            </summary>
+            <param name="key">Type</param>
+            <param name="propertyNames">Property names</param>
+            <returns>True if key is in cache</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.FieldCacheAdd(System.Type,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds property names to cache
+            </summary>
+            <param name="key">Type</param>
+            <param name="propertyNames">Property names</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetEntityFieldNames``1">
+            <summary>
+            Returns all property names of given type
+            </summary>
+            <returns>array of public property names</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetEntityFieldNames(System.Type)">
+            <summary>
+                Gets field names of passed type
+            </summary>
+            <param propertyName="type">Type</param>
+            <returns>collection of public field names (=> property names)</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.IsSimpleField(System.Type)">
+            <summary>
+            Checks value field type 
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.IsComplexField(System.Type)">
+            <summary>
+            Checks for generic // array
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.IsDiscoverable``1">
+            <summary>
+            Checks specified whether type where a discoverable entity.
+            </summary>
+            <remarks>A partial entity is assignable from <see cref="T:SchwabenCode.MongoDBRepository.IMongoDiscoverable"/></remarks>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.IsDiscoverable(System.Type)">
+            <summary>
+            Checks specified whether type where a discoverable entity.
+            </summary>
+            <remarks>A partial entity is assignable from <see cref="T:SchwabenCode.MongoDBRepository.IMongoDiscoverable"/></remarks>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.HandleType(System.Type,System.String,System.Collections.Generic.IList{System.String}@)">
+            <summary>
+            Checks value field type and pushes the field names into the passed property name list
+            </summary>
+            <exception cref="T:System.NotSupportedException">on unknown type</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.HandleComplexType(System.Type,System.String,System.Collections.Generic.IList{System.String}@)">
+            <summary>
+            Processes a complex class and pushes the property names into the cache
+            </summary>
+            <param name="type">Affected Type</param>
+            <param name="propertyName">Name of the parent field</param>
+            <param name="propNameCache">name cache</param>
+            <exception cref="T:System.NotSupportedException">on unknown type</exception>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.PushEmbeddedFieldNamesOfComplexType(System.Type,System.String,System.Collections.Generic.IList{System.String}@)">
+            <summary>
+            Determines all field names of the complex type and add it to the cache
+            </summary>
+            <param name="type">The type of the field names are to be determined.</param>
+            <param name="parentName">Parent name for the combination of field names</param>
+            <param name="propNameCache">Field name cache</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetFields(System.Type)">
+            <summary>
+                Gets public field of given type
+            </summary>
+            <param name="type">type</param>
+            <returns>all public fields as property info</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.GetFieldName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Gets the FieldName of the given MongoDBBaseEntity by expression (avoids magic strings).
+            </summary>
+            <typeparam name="T">MongoDBBaseEntity</typeparam>
+            <param name="expr">Expression</param>
+            <returns>Returns the given PropertyName</returns>
+            <example>var nameField = MyEntity.GetFieldName( () => </example>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoDiscoverer.PropName``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Gets the property of given class
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="expr">Property expression</param>
+            <returns>Property's name</returns>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.MongoEntityValidatable">
+            <summary>
+            Frame class for all entities
+            </summary>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.IsValid(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult}@)">
+            <summary>
+            Validations the entity
+            </summary>
+            <param name="validationResults">Errors</param>
+            <returns>true if entity is valid</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.IsValid">
+            <summary>
+            Entity validation
+            </summary>
+            <returns><see cref="T:SchwabenCode.MongoDBRepository.MongoEntityValidationResult"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.IsValidAsync">
+            <summary>
+            Entity validation
+            </summary>
+            <returns><see cref="T:SchwabenCode.MongoDBRepository.MongoEntityValidationResult"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.Validate">
+            <summary>
+            Please implement your validate logic
+            </summary>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.ValidateAsync">
+            <summary>
+            Async validation
+            </summary>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Implementation of <see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject"/>
+            </summary>
+            <param name="validationContext">Context</param>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.ValidateAsync(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Implementation of <see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject"/>
+            </summary>
+            <param name="validationContext">Context</param>
+            <returns>Collection of errors. Null is not allowed.</returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoEntityValidatable.NewError(System.String,System.Object[])">
+            <summary>
+            Creates an error
+            </summary>
+            <param name="message">message</param>
+            <param name="args">format elements</param>
+            <returns><see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"/></returns>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <remarks>Uses the pluralized name of the given entity as collection name</remarks>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.String)">
+            <summary>
+            Creates a default instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionName">Name of table/collection</param>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.MongoRepository`1.#ctor(SchwabenCode.MongoDBRepository.IMongoUnitOfWork,System.String,System.Boolean)">
+            <summary>
+            Creates an instance
+            </summary>
+            <param name="uow">Attached Unit of Work Container</param>
+            <param name="idFieldName">Name of the property represents the entity key.</param>
+            <param name="collectionNamePluralize">Appends an 's' after the entity's name to use this as collection name</param>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.RepositoryEntityAddedEventArgs`1">
+            <summary>
+            Event of added entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.RepositoryEntityAddedEventArgs`1.#ctor(`0)">
+            <summary>
+            Creates the instance
+            </summary>
+            <param name="entity">The entity that has been added</param>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.RepositoryEntityAddedEventArgs`1.Entity">
+            <summary>
+            The entity that has been added
+            </summary>
+        </member>
+        <member name="T:SchwabenCode.MongoDBRepository.RepositoryEntityDeletedEventArgs`1">
+            <summary>
+            Event of removed entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:SchwabenCode.MongoDBRepository.RepositoryEntityDeletedEventArgs`1.#ctor(`0)">
+            <summary>
+            Creates the instance
+            </summary>
+            <param name="entity">The entity that has been removed</param>
+        </member>
+        <member name="P:SchwabenCode.MongoDBRepository.RepositoryEntityDeletedEventArgs`1.Entity">
+            <summary>
+            The entity that has been removed
+            </summary>
+        </member>
+    </members>
+</doc>

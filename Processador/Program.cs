@@ -8,6 +8,7 @@ using System.Timers;
 using Dapper;
 using System.Runtime.CompilerServices;
 using System.Configuration;
+using Processador.Repository;
 
 namespace Processador
 {
@@ -17,6 +18,8 @@ namespace Processador
         static System.Timers.Timer timer;
 
         public static List<Module> modules = new List<Module>();
+
+        public static List<Driver> drivers = new List<Driver>();
 
 
         static void Main(string[] args)
@@ -42,22 +45,21 @@ namespace Processador
         {
             try
             {
-                modules.Clear();
-
-                using (SqlConnection connSystem = DataBase.connectPlugAndPlay(true))
+                using (SqlConnection connSystem = SqlDataBase.connectPlugAndPlay(true))
                 {
                     var response = connSystem.Query<Module>(@"select 
                                                 o.serverName [Server],
                                                 o.[Database] ,
                                                 o.username [User],
                                                 o.[Password] ,
-                                                ou.UnitId
+                                                ou.UnitId,
+                                                ou.AssetId,
+                                                ou.OrgId
                                                 from organizations o 
                                                 join OrganizationUnits ou on ou.OrgId = o.OrgId", connSystem).ToList();
 
 
                     modules = response;
-
 
                     Console.BackgroundColor = ConsoleColor.Green;
                     Console.WriteLine(modules.Count() + " modulos carregados");
