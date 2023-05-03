@@ -91,7 +91,7 @@ namespace Processador
 
             }
             catch (Exception e)
-            {
+            {                
                 Console.WriteLine("Exception: {0}", e.ToString());
                 client.Close();
             }

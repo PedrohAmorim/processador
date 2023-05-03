@@ -87,16 +87,18 @@ namespace Processador.Classes
         {
             try
             {
+                var asc = Convert.ToChar(Misc.decriptHexaDecimal(direction));
+
                 var decimalValue = Misc.decriptHexaDecimal(hexadecimal);
 
-                var degrees = (int)(decimalValue / 1000);
+                var degrees = (decimalValue / 1000.0);
 
-                var minutes = (decimalValue % 1000);
+                var minutes = (decimalValue % 1000.0);
 
                 var geoLocation = (degrees + minutes / 60000.0);
 
 
-                if (true)
+                if ((geoLocationType == "Lat" && asc == 'S') || (geoLocationType == "Lng" && asc == 'W') )
                 {
                     geoLocation *= -1;
                 }

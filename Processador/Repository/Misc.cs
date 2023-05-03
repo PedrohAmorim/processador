@@ -45,11 +45,7 @@ namespace Processador.Classes
         {
             try
             {
-                var OriginalMessage = hexadecimal.Replace("0x", "").Split(' ').Reverse().ToArray();
-
-                var concatString = String.Join("", OriginalMessage);
-
-                return Convert.ToInt32(concatString, 16);
+                return Convert.ToInt32(hexadecimal, 16);
             }
             catch (Exception ex)
             {

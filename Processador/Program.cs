@@ -25,7 +25,7 @@ namespace Processador
         static void Main(string[] args)
         {
             loadingModule();
-            timer = new System.Timers.Timer(600000);
+            timer = new System.Timers.Timer(30*60000);
             timer.Elapsed += Timer_Elapsed;
             timer.Enabled = true;
 
@@ -61,6 +61,7 @@ namespace Processador
 
                     modules = response;
 
+                    Console.Clear();
                     Console.BackgroundColor = ConsoleColor.Green;
                     Console.WriteLine(modules.Count() + " modulos carregados");
                     Console.ResetColor();

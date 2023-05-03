@@ -40,7 +40,6 @@ namespace Processador.Classes
 
         public void savePacket(Event Event)
         {
-
             // Salvar primeiro no Sql
             SqlDataBase.InsertEventFromOrganization(Event);
 
@@ -65,9 +64,7 @@ namespace Processador.Classes
         }
 
         public void savePacket(Track track)
-        {
-            
-
+        {           
             // Salvar primeiro no Sql
             SqlDataBase.InsertTrackFromOrganization(track);
 
