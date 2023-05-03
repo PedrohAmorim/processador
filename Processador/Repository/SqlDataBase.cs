@@ -33,8 +33,8 @@ namespace Processador
             {
                 using (SqlConnection conn = getConnection(Event._module.Database, true)) {
                     string query =
-                  @"INSERT INTO [dbo].[Events] ([UnitId], [EventId], [StartDateTime], [StartOdometer], [EndDateTime], [EndOdometer], [Value], [TotalTimeSeconds], [assetid])
-              VALUES(@unitid,@eventid,@startdatetime,@startodometer,@enddatetime,@endodometer,@value,@totalseconds,@assetid)";
+                  @"INSERT INTO [dbo].[Events] ([UnitId], [EventId], [StartDateTime], [StartOdometer], [EndDateTime], [EndOdometer], [Value], [TotalTimeSeconds], [assetid], [DriverId], [driveridpk])
+              VALUES(@unitid,@eventid,@startdatetime,@startodometer,@enddatetime,@endodometer,@value,@totalseconds,@assetid, (select top 1 extended_id from drivers where employee_number  = 0 ),(select top 1 id from drivers where employee_number  = 0 ))";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.Add(new SqlParameter("@unitid", Event._header.UnitId));
@@ -66,8 +66,8 @@ namespace Processador
                 using (SqlConnection conn = getConnection(track._module.Database, true))
                 {
                     string query =
-                  @"INSERT INTO [dbo].[Positions] ( [UnitId], [Timestamp], [Latitude], [Longitude], [SpeedKilometresPerHour], [Orientation], [assetid], [tipodispositivo], [istrack])
-                    VALUES(@unitid,@timestamp,@latitude,@longitude,@speed,@orientation,@assetid,@tipo,@istrack)";
+                  @"INSERT INTO [dbo].[Positions] ( [UnitId], [Timestamp], [Latitude], [Longitude], [SpeedKilometresPerHour], [Orientation], [assetid], [tipodispositivo], [istrack], [DriverId], [driveridpk])
+                    VALUES(@unitid,@timestamp,@latitude,@longitude,@speed,@orientation,@assetid,@tipo,@istrack, (select top 1 extended_id from drivers where employee_number  = 0 ),(select top 1 id from drivers where employee_number  = 0 ))";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.Add(new SqlParameter("@unitid", track._header.UnitId));

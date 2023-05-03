@@ -51,7 +51,7 @@ namespace Processador.Classes
                 AssetId = Event._module.AssetId,
                 Database = Event._module.Database,
                 OrgId = Event._module.OrgId,
-                Message = String.Join("0x", Event.originalMessage),
+                Message = String.Join(" ", Event.originalMessage),
                 port = "PnP",
                 TypePacket = 1,
                 Pending = false
@@ -77,7 +77,7 @@ namespace Processador.Classes
                 AssetId = track._module.AssetId,
                 Database = track._module.Database,
                 OrgId = track._module.OrgId,
-                Message = String.Join("0x", track.originalMessage),
+                Message = String.Join(" ", track.originalMessage),
                 port = "PnP",
                 TypePacket = 0,
                 Pending = false
